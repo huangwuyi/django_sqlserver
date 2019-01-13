@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link type="text/css"  rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <script src="{% static '/js/bootstrap.js' %}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="text-center center-block">My Application</h1>
+    </div>
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

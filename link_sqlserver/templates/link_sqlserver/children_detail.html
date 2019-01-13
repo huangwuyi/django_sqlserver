@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'childrenlist' %}">返回</a>
+<p>{{ object.name|capfirst  }}小朋友</p>
+<br/>
+<p>出生于：<h2 style="display:inline">{{ object.birthday|date:'Y-m-d'}}</h2></p>
+{% endblock %}

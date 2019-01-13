@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'childrencreate' %}">Add</a>
+{% if object_list %}
+<table class="table table-bordered table-hover table-striped">
+    {% for x in object_list %}
+    <tr>
+        <td>{{ x.name }}</td>
+        <td>{{ x.age_year }}</td>
+        <td>{{ x.age_day }}</td>
+        <td>{{ x.birthday|date:'Y-m-d' }}</td>
+        <td><a href="{% url 'childrendetail' x.id %}">详情</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock%}
