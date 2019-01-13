@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<a href="{% url 'childrencreate' %}">Add</a>
+<a href="{% url 'childrencreate' %}" class="btn btn-block btn-primary">Add</a>
 {% if object_list %}
 <table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>天龄</th>
+        <th>出生日期</th>
+        <th>详情</th>
+    </tr>
     {% for x in object_list %}
     <tr>
         <td>{{ x.name }}</td>

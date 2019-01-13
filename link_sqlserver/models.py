@@ -6,7 +6,7 @@ class Children(models.Model):
     name = models.CharField(max_length=50)
     age_year = models.IntegerField()
     age_day = models.IntegerField()
-    birthday = models.DateField()
+    birthday = models.DateTimeField()
 
 
 class BodyCondition(models.Model):

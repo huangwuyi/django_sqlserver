@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
-<a href="{% url 'childrenlist' %}">返回</a>
-<p>{{ object.name|capfirst  }}小朋友</p>
-<br/>
-<p>出生于：<h2 style="display:inline">{{ object.birthday|date:'Y-m-d'}}</h2></p>
+<div class="text-right">
+    <a href="{% url 'childrenlist' %}" class="btn btn-link text-right">返回</a>
+</div>
+<div class="panel panel-primary panel-collapse">
+    <div class="panel-heading">
+        {{ object.name|capfirst }}小朋友
+    </div>
+    <div class="panel-body">
+        <p>出生于：
+        <h2 style="display:inline">{{ object.birthday|date:'Y-m-d'}}</h2></p>
+        <ul class="list-group">
+            <li class="list-group-item  {% cycle 'list-group-item-danger' 'list-group-item-success' 'list-group-item-info' %}">
+                <a href="">体重信息</a></li>
+            <li class="list-group-item"><a href="">身高信息</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
