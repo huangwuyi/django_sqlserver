@@ -1,5 +1,12 @@
+{% load widget_tweaks %}
+
 {{ form.errors }}
 {% for x in form %}
-{{ x.label }}
-{{ x }}
+<div class="col-sm-12 col-md-6 col-lg-4 form-group  form-horizontal">
+    <label class="control-label col-md-4 ">{{ x.label }}</label>
+
+    <div class="col-md-8 ">
+        {{ x|add_class:'form-control' }}
+    </div>
+</div>
 {% endfor %}

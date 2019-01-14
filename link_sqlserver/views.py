@@ -18,11 +18,11 @@ class ChildrenListView(ListView):
 class ChildrenDetailView(DetailView):
     model = Children
     context_object_name = 'object'
-    dtnow = datetime.now(tz='UTC')
-    dtbirth = model.birthday
+    # dtnow = datetime.now(tz='UTC')
+    # dtbirth = model.birthday
     # datetime.combine(model.birthday, time=datetime.time())
-    timespan = localtime(dtnow) - localtime(dtbirth)
-    print(timespan)
+    # timespan = localtime(dtnow) - localtime(dtbirth)
+    # print(timespan)
 
 
 class ChildrenCreateView(CreateView):
