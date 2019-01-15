@@ -1,8 +1,8 @@
 {% load widget_tweaks %}
 
-{{ form.errors }}
 {% for x in form %}
-<div class="col-sm-12 col-md-6 col-lg-4 form-group  form-horizontal">
+<div class="col-sm-12 col-md-6 col-lg-4 form-group  form-horizontal {% if x.errors %} bg-danger
+{% endif %}">
     <label class="control-label col-md-4 ">{{ x.label }}</label>
 
     <div class="col-md-8 ">
@@ -10,3 +10,6 @@
     </div>
 </div>
 {% endfor %}
+{% if form.errors %}
+<div class="alert alert-danger" style="clear: both;">{{ form.errors }}</div>
+{% endif %}

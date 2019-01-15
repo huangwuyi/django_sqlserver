@@ -1,0 +1,7 @@
+{% extends 'children_detail.html' %}
+{% block delete %}
+<form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger">删除</button>
+</form>
+{% endblock %}

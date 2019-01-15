@@ -52,6 +52,18 @@ class ChildrenCreateView(CreateView):
     success_url = reverse_lazy('childrenlist')
 
 
+class ChildrenUpdateView(UpdateView):
+    model = Children
+    fields = '__all__'
+    success_url = reverse_lazy('childrenlist')
+
+
+class ChildrenDeleteView(DeleteView):
+    model = Children
+    context_object_name = 'object'
+    success_url = reverse_lazy('childrenlist')
+
+
 def MacAndIP(request):
     if request.method == "POST":
         ip = socket.gethostbyname(socket.gethostname())

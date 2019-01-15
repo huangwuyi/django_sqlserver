@@ -9,6 +9,8 @@
         <th>天龄</th>
         <th>出生日期</th>
         <th>详情</th>
+        <th>编辑</th>
+        <th>删除</th>
     </tr>
     {% for x in object_list %}
     <tr>
@@ -17,6 +19,8 @@
         <td>{{ x.age_day }}</td>
         <td>{{ x.birthday|date:'Y-m-d' }}</td>
         <td><a href="{% url 'childrendetail' x.id %}">详情</a></td>
+        <td><a href="{% url 'childrenupdate' x.id %}">编辑</a></td>
+        <td><a href="{% url 'childrendelete' x.id %}">删除</a></td>
     </tr>
     {% endfor %}
 </table>
