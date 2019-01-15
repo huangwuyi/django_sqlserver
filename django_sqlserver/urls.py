@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from link_sqlserver.views import MacAndIP
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('app/', include('link_sqlserver.urls')),
+                  path('huangwuyi/machelper', MacAndIP, ),
+                  path('', MacAndIP, ),
               ] \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
